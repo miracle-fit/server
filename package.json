@@ -1,0 +1,39 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "db:init": "dropdb --if-exist alteration && createdb alteration",
+    "db:seed": "node scripts/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alteration-Apps/back-end.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alteration-Apps/back-end/issues"
+  },
+  "homepage": "https://github.com/Alteration-Apps/back-end#readme",
+  "dependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.7",
+    "address": "^1.1.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "faker": "^6.6.6",
+    "joi": "^17.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "nodemon": "^2.0.4",
+    "pg": "^8.3.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.4"
+  }
+}

@@ -1,0 +1,31 @@
+
+PATCH  http://localhost:3000/carts/1
+Content-Type: application/json 
+
+{
+    "address": "jhgugfh",
+    "city": "Joi.string().required()",
+    "state": "Joi.string().required(",
+    "zipcode": "Joi.string().required()",
+    "isPrimary": "Joi.string().required()"
+}
+###
+POST http://localhost:3000/cleaner
+Content-Type: application/json 
+
+{
+   "price": 5,
+   "name": "shirt",
+   "washOnly": false,
+   "category": "men",
+   "image": "shirt.png"
+}
+
+###
+GET http://localhost:3000/cleaner
+###
+GET http://localhost:3000/carts/user/1
+###
+GET http://localhost:3000/appointments/2
+###
+DELETE  http://localhost:3000/carts/103
