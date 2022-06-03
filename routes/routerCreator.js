@@ -26,6 +26,20 @@ const AllWithInclude = (model, req, res, include) => {
     })
 }
 
+const AllWithFilterBoolean = async (model, req, res, filter, value) => {
+    await model.findAll({
+        where: { [filter]: value },
+        order: [['id', 'ASC']],
+        limit: 5
+    }).then((data) => {
+        res.json({
+            status: 200,
+            data
+        })
+    }).catch((err) => {
+        res.send(err)
+    })
+}
 const AllWithFilter = async (model, req, res, filter, include) => {
     await model.findAll({
         where: { [filter]: req.params.id },
@@ -136,7 +150,8 @@ module.exports = {
         AllWithInclude,
         One,
         OneWithInclude,
-        AllWithFilter
+        AllWithFilter,
+        AllWithFilterBoolean
     },
     Post,
     Patch,

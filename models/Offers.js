@@ -1,27 +1,26 @@
 const Sequelize = require("sequelize")
 const { db } = require("../db")
 
-const Orders = db.define("orders", {
-    orderId: {
+const Orders = db.define("offers", {
+    title: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    total: {
+    quantityOff: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    status: {
+    icon: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    products: {
-        type: Sequelize.JSONB,
+    status: {
+        type: Sequelize.BOOLEAN,
         allowNull: false
     },
-    isAOrder: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        defaultValue: true
+    category: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 })
 

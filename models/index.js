@@ -4,6 +4,8 @@ const Users = require("./Users")
 const Appointments = require("./Appointments")
 const Address = require("./Address")
 const Orders = require("./Oders")
+const Offers = require("./Offers")
+const Services = require("./Services")
 
 
 Users.hasMany(Appointments)
@@ -20,5 +22,7 @@ module.exports = {
     Users,
     Address,
     Orders,
-    Appointments
+    Appointments,
+    Offers,
+    Services
 }

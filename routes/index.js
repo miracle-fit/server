@@ -4,6 +4,8 @@ const Address = require("./Address")
 const Cleaner = require("./Cleaner")
 const ShoppingCart = require("./ShoppingCart")
 const Oders = require("./Oders")
+const Offers = require("./Offers")
+const Services = require("./Services")
 
 module.exports = {
     Users,
@@ -11,5 +13,7 @@ module.exports = {
     Address,
     Cleaner,
     Oders,
-    ShoppingCart
+    ShoppingCart,
+    Offers,
+    Services
 }

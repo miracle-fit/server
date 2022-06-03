@@ -1,4 +1,4 @@
-const { ShoppingCart, Users, Cleaner } = require("../models")
+const { Services, Users, Cleaner, Offers } = require("../models")
 const { faker } = require('@faker-js/faker')
 
 function user() {
@@ -32,5 +32,40 @@ function cleaner() {
 }
 
 
+function offer() {
+    const offers = ["OFF ON DRY CLEANER", "OFF ON DRY TAILORING"]
+    const categoty = ["cleaner", "tailor"]
+    const offersIcon = ["/images/offers/2.png", "/images/offers/6.png"]
+    const percentages = [20, 40]
+
+    for (let i = 0; i < offers.length; i++) {
+        Offers.create({
+            title: `${percentages[i]}% ${offers[i]}`,
+            quantityOff: percentages[i],
+            status: true,
+            icon: offersIcon[i],
+            category: categoty[i]
+        })
+    }
+}
+
+function service() {
+    const services = ["Laundry", "Tailoring"]
+    const servicesIcon = ["/images/services/laundry.png", "/images/services/sewing.png"]
+    const servicesColor = ["11,83,148", "112,53,17"]
+    for (let i = 0; i < services.length; i++) {
+        Services.create({
+            title: services[i],
+            icon: servicesIcon[i],
+            color: servicesColor[i],
+            status: true,
+            category: services[i].toLowerCase()
+        })
+    }
+}
+
+
 // user()
 // cleaner()
+offer()
+// service()

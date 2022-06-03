@@ -23,7 +23,32 @@ router.get("/:id", async (req, res) => {
 })
 
 router.post("/", async (req, res) => {
-    Post(Orders, req, res, OrdersSchema)
+    // Post(Orders, req, res, OrdersSchema)
+    OrdersSchema.validateAsync(req.body).then(async (bag) => {
+        const { total, status, products, userId } = bag
+        if (bag) {
+            await Orders.create({
+                orderId: `${Date.now()}`,
+                total,
+                status,
+                products,
+                userId
+            }).then((data) => {
+                res.json({
+                    status: 200,
+                    error: false,
+                    data
+                })
+            }).catch((err) => {
+                res.json({
+                    error: true,
+                    message: err
+                })
+            })
+        }
+    }).catch((err) => {
+        res.send(err)
+    })
 })
 
 router.patch("/:id", async (req, res) => {

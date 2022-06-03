@@ -19,6 +19,8 @@ app.use("/address", Routes.Address)
 app.use("/cleaner", Routes.Cleaner)
 app.use("/carts", Routes.ShoppingCart)
 app.use("/orders", Routes.Oders)
+app.use("/offers", Routes.Offers)
+app.use("/services", Routes.Services)
 
 
 app.get("/", (req, res) => {

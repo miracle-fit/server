@@ -24,6 +24,10 @@ router.get("/:id", (req, res) => {
     Get.OneWithInclude(Appointments, req, res, [Address, Users])
 })
 
+router.get("/user/:id", async (req, res) => {
+    Get.AllWithFilter(Appointments, req, res, "userId", [Users])
+})
+
 router.post("/", async (req, res) => {
     Post(Appointments, req, res, AppointmentsSchema)
 })

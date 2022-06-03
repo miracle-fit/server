@@ -20,12 +20,25 @@ Content-Type: application/json
    "category": "men",
    "image": "shirt.png"
 }
+###
+POST http://localhost:3000/orders
+Content-Type: application/json 
+
+{
+    "total": 0,
+    "status": "placed",
+    "products": [],
+    "userId": 1
+}
 
 ###
-GET http://localhost:3000/cleaner
+GET http://localhost:3000/services/status
+
 ###
 GET http://localhost:3000/carts/user/1
+
 ###
 GET http://localhost:3000/appointments/2
+
 ###
 DELETE  http://localhost:3000/carts/103
